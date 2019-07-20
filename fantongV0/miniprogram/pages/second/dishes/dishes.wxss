@@ -1,0 +1,255 @@
+/* pages/second/dishes/dishes.wxss */
+/* 搜索框 */
+.search-box {
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid lightgray;
+  background: white;
+  z-index: 3;
+}
+.search-box .box {
+  width: 90%;
+  height: 50%;
+  background: lightgray;
+  border-radius: 5px;
+  z-index: inherit;
+}
+.place-holder {
+  text-align: center;
+  font-size: 25rpx;
+}
+
+
+/* 筛选器 */
+.menu-nav {
+  position: relative;
+  z-index: 3;
+}
+.dropdown-menu {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  background: white;
+  z-index: inherit;
+}
+.menu-items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  align-items: center;
+  justify-content: center;
+  z-index: inherit;
+}
+.menu-item {
+  position: relative;
+  width: 250rpx;
+  text-align: center;
+  font-size: 30rpx;
+  z-index: inherit;
+}
+.menu-item::after{
+  content: '';
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  right: 70rpx;
+  bottom: 16rpx;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  transform: rotateZ(45deg);
+  z-index: inherit;
+}
+.shade {
+  width:100%;   
+  height:100vh;   
+  /* top:0;    */
+  background:rgba(0,0,0,0.5);   
+  overflow: hidden;   
+  /*要显示在wrap的上面 */   
+  z-index: 2;   
+  position: absolute;  
+}
+.item-container {
+  position: absolute;
+  width: 100%;
+  background: gray;
+  /* height: 50px; */
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
+}
+.half {
+  box-sizing: border-box;
+  width: 50%;
+  /* height: 100%; */
+  padding: 10px 0 10px 20px;
+  color: gray;
+}
+.left-half {
+  background: white;
+}
+.right-half {
+  background: #fed31d;
+}
+.current_left_select {
+  background: #fed31d;
+}
+.show {
+  /* display: block; */
+  animation: slidedown 0.2s ease-in-out both;
+}
+.dispear {
+  /* display: block;
+  animation: slideup 0.5s ease-in both; */
+  display: none;
+}
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%)
+  }
+  to {
+    transform: translateY(0%)
+  }
+}
+@keyframes slideup {
+  from {
+    transform: translateY(0%)
+  }
+  to {
+    transform: translateY(-100%)
+  }
+}
+
+/* 心动模式提示 */
+.heart-mode {
+  width: 100%;
+  height: 70rpx;
+  background: papayawhip;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.heart-mode navigator span{
+  border-bottom: 2px solid palevioletred;
+}
+
+
+/* 菜单列表 */
+.single-dish {
+  width: 680rpx;
+  height: 220rpx;
+  box-shadow: 0px 0px 8px gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* z-index: -2; */
+}
+
+.single-dish #picture {
+  width: 220rpx;
+  height: 220rpx;
+  /* background: greenyellow; */
+}
+.dish-pic {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.single-dish #info {
+  width: 440rpx;
+  height: 100%;
+  /* background: papayawhip; */
+  margin-left: 20rpx;
+}
+#info .name {
+
+}
+#info .taste {
+  font-size: 24rpx;
+  color: gray;
+}
+#info .raw-materials {
+  font-size: 24rpx;
+  margin: 20rpx 0 20rpx 0;
+  font-weight: bold;
+  width: 140px;
+  /* 显示特定的字数 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+#info .chefs {
+  height: 60rpx;
+  /* background: gray; */
+  display: flex;
+  flex-direction: row;
+} 
+.chefs .chef {
+  margin: 0 20rpx 0 0;
+  width: 60rpx;
+  height: 60rpx;
+  background: #fed31d;
+  border-radius: 50%;
+}
+.chefs .more {
+  background: none;
+}
+.add {
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  right: 20rpx;
+  bottom: 20rpx;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid rgb(238, 236, 236);
+}
+.heart-icon {
+  height: 35rpx;
+  width: 40rpx;
+  margin: 20rpx 14rpx 18rpx 16rpx;
+}
+
+
+
+/* 我的饭桶(喜爱车)入口 */
+.bucket-cart {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #fed31d;
+  opacity: 0.8;
+  right: 10px;
+  bottom: 50px;
+  z-index: 4;
+  /* 待删除 换成icon */
+  text-align: center;
+  line-height: 100rpx;
+}
+.hide-cart {
+  animation: hideRight 0.5s ease-in-out both
+}
+@keyframes hideRight {
+  from{
+    transform: translateX(0%)
+  }
+  to{
+    transform: translateX(100%)
+  }
+}
+

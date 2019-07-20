@@ -1,0 +1,72 @@
+/* pages/mealTicket/mealTicket.wxss */
+.menu-nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  background: white;
+  z-index: 1;
+}
+.nav-child {
+  width: 33%;
+  text-align: center;
+}
+
+.item-container {
+  position: absolute;
+  width: 100%;
+  background: gray;
+  /* height: 50px; */
+  display: flex;
+  flex-direction: row;
+}
+.dish-category {
+  /* background: peachpuff; */
+}
+.dish-taste {
+  /* background: palevioletred; */
+} 
+.dish-materials {
+  /* background: lemonchiffon; */
+}
+.half {
+  box-sizing: border-box;
+  width: 50%;
+  /* height: 100%; */
+}
+.left-half {
+  background: pink;
+}
+
+.right-half {
+  background: papayawhip;
+}
+
+.show {
+  /* display: block; */
+  animation: slidedown 0.2s ease-in both;
+}
+.dispear {
+  /* display: block;
+  animation: slideup 0.5s ease-in both; */
+  display: none;
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%)
+  }
+  to {
+    transform: translateY(0%)
+  }
+}
+@keyframes slideup {
+  from {
+    transform: translateY(0%)
+  }
+  to {
+    transform: translateY(-100%)
+  }
+}

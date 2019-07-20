@@ -1,0 +1,115 @@
+<!--pages/second/dishes/dishes.wxml-->
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-box" catchtouchmove="{{true}}">
+    <!-- <icon type="search"></icon> -->
+    <input class="box" placeholder='搜索菜品' placeholder-class="place-holder"></input>
+  </view>
+
+  <!-- 筛选器 -->
+  <view class="menu-nav">
+    <view class="dropdown-menu" catchtouchmove="{{true}}">
+      <view class="menu-items">
+        <!-- <block wx:for="{{ menus }}" wx:key="key">
+          <view class="menu-item {{menu-clicked? 'menu-clicked':'' }}" bindtap="menuClick" data-key="{{ item.key }}">{{ item.name }}</view>
+        </block> -->
+        <view class="menu-item" bindtap="tapCategoryNav">{{ categoryName? categoryName:"菜系" }}</view>
+        <view class="menu-item" bindtap="tapTasteNav">{{ tasteName? tasteName:"口味" }}</view>
+        <view class="menu-item" bindtap="tapMaterialsNav">{{ materialName? materialName:"食材" }}</view>
+      </view>
+    </view>
+
+
+    <!-- 筛选器列表 -->
+    <view class="nav-container">
+      <view class="shade" hidden="{{ !(categoryOpen||tasteOpen||materialsOpen) }}" bindtap="closeNav" catchtouchmove="{{true}}">
+        <!-- 菜系 -->
+        <view class="item-container dish-category {{ categoryOpen? 'show':'dispear' }}">
+          <!-- 左半部分 -->
+          <view class="half left-half">
+            <block wx:for="{{ dishCategories }}" wx:key="id">
+              <view class="{{item.id == category_select? 'current_left_select':''}}" catchtap="categoryChoose" data-item="{{ item }}">{{ item.name }}</view>
+            </block>
+          </view>
+          <!-- 右半部分 -->
+          <view class="half right-half">
+            <block wx:for="{{ dishCategories[key].sub }}" wx:key="id">
+              <view catchtap="categorySubChoose" data-item="{{ item }}">{{ item }}</view>
+            </block>
+          </view>
+        </view>
+
+        <!-- 口味 -->
+        <view class="item-container dish-taste {{ tasteOpen? 'show':'dispear' }}">
+          <!-- 左半部分 -->
+          <view class="half left-half">
+            <block wx:for="{{ dishTastes }}" wx:key="id">
+              <view class="{{item.id == taste_select? 'current_left_select':''}}" catchtap="tasteChoose" data-item="{{ item }}">{{ item.name }}</view>
+            </block>
+          </view>
+          <!-- 右半部分 -->
+          <view class="half right-half">
+            <block wx:for="{{ dishTastes[key].sub }}" wx:key="id">
+              <view catchtap="tasteSubChoose" data-item="{{ item }}">{{ item }}</view>
+            </block>
+          </view>
+        </view>
+
+        <!-- 食材 -->
+        <view class="item-container dish-materials {{ materialsOpen? 'show':'dispear' }}">
+          <!-- 左半部分 -->
+          <view class="half left-half">
+            <block wx:for="{{ dishMaterials }}" wx:key="id">
+              <view class="{{item.id == material_select? 'current_left_select':''}}" catchtap="materialChoose" data-item="{{ item }}">{{ item.name }}</view>
+            </block>
+          </view>
+          <!-- 右半部分 -->
+          <view class="half right-half">
+            <block wx:for="{{ dishMaterials[key].sub }}" wx:key="id">
+              <view catchtap="materialSubChoose" data-item="{{ item }}">{{ item }}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 心动模式提示 -->
+  <view class="heart-mode">
+    下拉或点击，进入“
+    <navigator url="../funCuisine/funCuisine">
+      <span>心动模式</span>
+    </navigator>”
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="dishes" id="allShow">
+    <block wx:for="{{ currentDishes }}" wx:key="身份ID">
+      <view class="single-dish" id="myShow">
+        <view id="picture">
+          <!-- <image class="dish-pic" mode="scaleToFill" src="../../../images/dishes/{{item['身份ID']}}.png" bindtap="labelClick"></image> -->
+          <image class="dish-pic" mode="scaleToFill" src="{{item['照片']}}" bindtap="labelClick"></image>
+        </view>
+        <view id="info" bindtap="labelClick">
+          <view class="name">{{ item['姓名'] }}</view>
+          <view class="taste">{{ item['口味'] }}</view>
+          <view class="raw-materials">{{ item['食材'] }}</view>
+          <view class="chefs">
+            <view class="chef A"></view>
+            <view class="chef B"></view>
+            <view class="chef C"></view>
+            <view class="chef more">...</view>
+          </view>
+        </view>
+        <view class="add" bindtap="addRiceBucket">
+          <image class="heart-icon" src="../../../images/icons/heart_big.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+
+
+  <!-- 我的饭桶(喜爱车)入口 -->
+  <view class="bucket-cart {{hideCart?'hide-cart':''}}" bindtap="goRiceBucket">L</view>
+
+</view>

@@ -1,0 +1,155 @@
+/* pages/secondPages/funCuisine/funCuisine.wxss */
+.container{
+  background-color:rgb(246,247,251);
+  /* overflow-x: hidden; */
+  height: 100vh;
+}
+
+/* 顶部 */
+.head-title {
+  height: 60rpx;
+  width: 100%;
+  margin: 20rpx 0 40rpx 0;
+  text-align: center;
+}
+.head-title text {
+    border-bottom: 2px solid palevioletred;
+}
+
+
+/* 中部 */
+.moveBoard {
+  display: flex;
+  flex: column;
+  /* 垂直居中 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  width: 750rpx;
+  height: 400px;
+  /* overflow: hidden; */
+  /* margin: 30px 0 0 0; */
+}
+
+.next-pic {
+  position: absolute;
+  z-index: -1;
+  height: 600rpx;
+  width: 600rpx;
+}
+
+movable-area {
+  /* display: flex;
+  flex-flow: column; */
+  /* justify-content: center; */
+  position: absolute;
+  width: 1950rpx;
+  height: 400px;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+movable-view {
+  /* position: absolute; */
+  height: 700rpx;
+  width: 700rpx;
+  background: transparent;
+  left:625rpx;
+  /* transform: rotate(45deg) !important; */
+}
+.current-pic {
+  width: 700rpx;
+  height: 700rpx;
+  border-radius: 30px;
+}
+/* 图片标签介绍 */
+.text-box {
+  text-align: center;
+}
+
+
+
+/* 底部 */
+.btn-area {
+  position: absolute;
+  /* margin-top: 20px; */
+  display: flex;
+  flex-flow: row;
+  bottom: 90rpx;
+}
+
+.round {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 60rpx 0 60rpx;
+}
+
+.cross{
+  /* left: 10px; */
+}
+
+.cross-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.heart{
+  /* right: 10px; */
+}
+
+.heart-icon {
+  width: 76rpx;
+  height: 64rpx;
+  top:2px;
+}
+
+.small {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0px;
+  top: 15px;
+}
+/* 测试区 */
+
+
+/* .sign-contract {
+  width: 750rpx;
+  border-radius: 30px;
+} */
+.contract-tip {
+  font-size: 40rpx;
+  color: black;
+  /* margin-bottom: 30px;
+  margin-left: 10px; */
+  margin: 20rpx 0px 60rpx 20rpx;
+}
+
+#sign-note::after {
+  content: '';
+  position: absolute;
+  width: 38%;
+  height: 8%;
+  top: 34%;
+  left: 8%;
+  background: papayawhip;
+  z-index: -1;
+}
+.confirm span::after{
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  bottom: 16rpx;
+  left: 194rpx;
+  background: pink;
+  z-index: -1;
+}
+.cancel span{
+  font-size: 26rpx;
+  color: gray;
+}

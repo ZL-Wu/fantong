@@ -1,0 +1,93 @@
+/* pages/index/index.wxss */
+page {
+  /* background-color: rgb(240, 236, 236); */
+}
+
+.swiperContainer, swiper {
+  width: 100%;
+  height: 35vh;
+}
+
+.slide-image {
+  width: 100%;
+  height: 35vh;
+}
+
+.main-service {
+  margin-top: 15px
+}
+
+navigator {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-flow: column;
+  width: 700rpx;
+  height: 13vh;
+  justify-content: center;
+  /* border: 1px solid grey; */
+  margin: 5px;
+  box-shadow: 0px 1px 5px grey;
+  padding-left: 30rpx;
+}
+
+.icon {
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+  right:25rpx;
+  top: 18rpx;
+  background: green;
+  border-radius: 50%;
+}
+
+#eng {
+  font-size: 10px;
+  font-weight: bold;
+}
+#ch {
+  font-weight: bold;
+}
+
+.banner {
+  width: 95%;
+  height: 14vh;
+  background: green;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 14vh;
+  color: white;
+}
+
+
+.round-click{
+    height: 80rpx;
+    width: 80rpx;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 150rpx;
+    right: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    box-shadow: 0px 0px 5px black;
+}
+
+.round-click navigator{
+    font-size: 32rpx;
+    max-width: 80rpx;
+    /* color: #fff; */
+    text-align: center;
+    z-index: 5;
+}
+
+.futureModule {
+  color: gray;
+}
+
+.futureIcon {
+  background: gray;
+}

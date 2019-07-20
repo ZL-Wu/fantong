@@ -1,0 +1,60 @@
+<!--pages/index/index.wxml-->
+<!-- <van-search
+  class="searchInput"
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:search="onSearch"
+>
+  <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search> -->
+
+
+<view class="container">
+  <!-- 广告版 -->
+  <view class='swiperContainer'>
+    <swiper display-multiple-items='1' indicator-dots='true'>
+      <block wx:for="{{imgUrls}}" wx:key="">
+        <swiper-item>
+          <view class='box'>
+            <image src='{{item}}' class='slide-image' />
+            <!-- <view class='content'>
+            <text>拿手菜</text>
+          </view> -->
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="main-service">
+    <navigator url="../second/dishes/dishes" hover-class="navigator-hover">
+      <view id="ch">看看菜品</view>
+      <view id="eng">Looking for dishes</view>
+      <view class="icon"></view>
+    </navigator>
+    <navigator url="../second/myBucket/myBucket" hover-class="navigator-hover">
+      <view id="ch">我的饭桶</view>
+      <view id="eng">My rice bucket</view>
+      <view class="icon"></view>
+    </navigator>
+    <navigator class="futureModule" url="" hover-class="none">
+      <view id="ch">给Ta送饭</view>
+      <view id="eng">Meal delivery</view>
+      <view class="icon futureIcon"></view>
+    </navigator>
+
+    <!-- <navigator url="" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator> -->
+    <!-- <navigator url="/page/index/index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator> -->
+    <!-- <navigator target="miniProgram" open-type="navigate" app-id="" path="" extra-data="" version="release">打开绑定的小程序</navigator> -->
+  </view>
+
+  <!-- banner -->
+  <view class="banner"> BANNER </view>
+
+  <!-- <view class="round-click">
+    <navigator url=''></navigator>
+  </view> -->
+
+
+</view>

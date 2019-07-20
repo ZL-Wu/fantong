@@ -1,0 +1,73 @@
+/* pages/second/detail/detail.wxss */
+.picture {
+  width: 90%;
+  height: 50vh;
+  /* background: peachpuff; */
+}
+image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.detail {
+  width: 600rpx;
+  margin: 20px 20px 20px 20px;
+  position: relative
+}
+
+.detail .taste {
+  font-size: 24rpx;
+  color: gray;
+}
+
+.detail .chefs {
+  width: 250rpx;
+  height: 60rpx;
+  /* background: gray; */
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0rpx;
+  top: 0px;
+} 
+
+.chefs .chef {
+  margin: 0 20rpx 0 0;
+  width: 60rpx;
+  height: 60rpx;
+  background: lightgreen;
+  border-radius: 50%;
+}
+.chefs .more {
+  background: none;
+}
+
+.add {
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  right: 20rpx;
+  top: 120rpx;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid rgb(238, 236, 236);
+}
+
+.heart-icon {
+  height: 35rpx;
+  width: 40rpx;
+  margin: 20rpx 14rpx 18rpx 16rpx;
+}
+
+.detail .raw-materials, .detail .hometown {
+  font-size: 24rpx;
+  margin: 20rpx 0 20rpx 0;
+  font-weight: bold;
+}
+
+.detail .story {
+  font-size: 24rpx;
+  margin: 20rpx 0 20rpx 0;
+  font-weight: bold;
+}

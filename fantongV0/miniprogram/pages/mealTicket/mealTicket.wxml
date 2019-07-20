@@ -1,0 +1,62 @@
+<!--pages/mealTicket/mealTicket.wxml-->
+<!-- <view>这是”我的饭票“页面，建设中...</view> -->
+<dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{dropDownMenuFirstData}}' dropDownMenuSourceData='{{dropDownMenuSecondData}}' dropDownMenuStyleData='{{dropDownMenuThirdData}}' dropDownMenuFilterData='{{dropDownMenuFourthData}}'
+  bind:selectedItem='selectedItem' />
+<view class="menu-nav">
+  <view class="nav-child" bindtap="tapCategoryNav">{{ categoryName? categoryName:"菜系" }}</view>
+  <view class="nav-child" bindtap="tapTasteNav">{{ tasteName? tasteName:"口味" }}</view>
+  <view class="nav-child" bindtap="tapMaterialsNav">{{ materialName? materialName:"食材" }}</view>
+</view>
+
+<view class="nav-container" style="">
+  <!-- 菜系 -->
+  <view class="item-container dish-category {{ categoryOpen? 'show':'dispear' }}">
+    <!-- 左半部分 -->
+    <view class="half left-half">
+      <block wx:for="{{ dishCategories }}" wx:key="id">
+        <view bindtap="categoryChoose" data-item="{{ item }}">{{ item.name }}</view>
+      </block>
+    </view>
+    <!-- 右半部分 -->
+    <view class="half right-half">
+      <block wx:for="{{ dishCategories[key].sub }}" wx:key="id">
+        <view bindtap="categorySubChoose" data-item="{{ item }}">{{ item }}</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 口味 -->
+  <view class="item-container dish-taste {{ tasteOpen? 'show':'dispear' }}">
+    <!-- 左半部分 -->
+    <view class="half left-half">
+      <block wx:for="{{ dishTastes }}" wx:key="id">
+        <view bindtap="tasteChoose" data-item="{{ item }}">{{ item.name }}</view>
+      </block>
+    </view>
+    <!-- 右半部分 -->
+    <view class="half right-half">
+      <block wx:for="{{ dishTastes[key].sub }}" wx:key="id">
+        <view bindtap="tasteChoose" data-item="{{ item }}">{{ item }}</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 食材 -->
+  <view class="item-container dish-materials {{ materialsOpen? 'show':'dispear' }}">
+    <!-- 左半部分 -->
+    <view class="half left-half">
+      <block wx:for="{{ dishMaterials }}" wx:key="id">
+        <view bindtap="materialChoose" data-item="{{ item }}">{{ item.name }}</view>
+      </block>
+    </view>
+    <!-- 右半部分 -->
+    <view class="half right-half">
+      <block wx:for="{{ dishMaterials[key].sub }}" wx:key="id">
+        <view bindtap="materialChoose" data-item="{{ item }}">{{ item }}</view>
+      </block>
+    </view>
+
+  </view>
+</view>
+
+<view>hello world!</view>

@@ -1,0 +1,55 @@
+<!--pages/secondPages/funCuisine/funCuisine.wxml-->
+<view class="container">
+
+  <!-- 顶部介绍 -->
+  <view class="head-title">
+    <text>心动模式</text>
+  </view>
+
+  <!-- 中部划一划 -->
+  <view class="moveBoard">
+    <!-- <image class='cuisineImg' src='../../../images/post.png'></image> -->
+              <image class="next-pic" mode="scaleToFill" src="{{ cuisines[nextShowId].picObj.url }}"></image>
+              <movable-area class="pic-box"  wx:if="{{showImg}}">
+                <movable-view x="{{x}}" y="{{y}}" style='transform: rotate(45deg)!important;' animation damping="200" out-of-bounds direction="all" bindchange="moveimg" >
+                <image class="current-pic" src="{{cuisines[currentShowId].picObj.url}}" bindtouchend="touchendimg" bindtouchcancel='touchendimg' mode='scaleToFill'></image>
+                <!-- <view class="mask"></view> -->
+                <view class="text-box">
+                  <text class="cui-name">{{cuisines[currentShowId].name}}</text>
+                  <!-- <view class="taste-box">
+                    <text class="score-name">豆瓣评分：</text>
+                    <text class="score">{{movieData[isShowId].score}}</text>
+                  </view> -->
+                </view>
+                </movable-view>
+              </movable-area>
+  </view>
+
+
+
+  <!-- 底部按钮 -->
+  <view class="btn-area">
+    <button class="round small">R</button>
+    <button class="round cross" bindtap="dislike"><image class="icon cross-icon" src="../../../images/icons/cross.png"></image></button>
+    <button class="round heart" bindtap="like"><image class="icon heart-icon" src="../../../images/icons/heart_big.png"></image></button>
+    <button class="round small">?</button>
+  </view>
+
+  <!-- 测试区域 -->
+  <!-- <view>
+  <text>还剩：{{ second }}</text>
+</view> -->
+
+<!-- <modal class="sign-contract" cancel-text="我再看看" confirm-text="我要签约">饭桶君已经知道了你的喜好，赶紧签约吧！
+<view>我要签约</view>
+</modal> -->
+
+<modal cancel-text="" confirm-text="" hidden="{{ flag }}">
+  <view class="contract-tip">饭桶君已经知道了您的喜好，<view id="sign-note">赶紧签约吧！</view></view>
+  <button class="confirm" bindtap="signConfirm"><span>我要签约</span></button>
+  <button class="cancel" bindtap="signCancel"><span>我再看看</span></button>
+</modal>
+
+
+
+</view>

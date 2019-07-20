@@ -1,0 +1,35 @@
+<!--pages/second/detail/detail.wxml-->
+<view class="container">
+  <!-- 顶部图片 -->
+  <view class="picture">
+    <image mode="scaleToFill" src="../../../images/chicken.jpeg"></image>
+  </view>
+
+  <!-- 菜品信息 -->
+  <view class="detail">
+    <!-- 名字 -->
+    <view class="name">宫爆鸡丁</view>
+    <!-- 口味 -->
+    <view class="taste">甜、辣</view>
+    <!-- 厨师 -->
+    <view class="chefs">
+      <view class="chef A"></view>
+      <view class="chef B"></view>
+      <view class="chef C"></view>
+      <!-- <view class="chef more">...</view> -->
+    </view>
+    <!-- 食材 -->
+    <view class="raw-materials">食材：鸡肉、大葱、花生、辣椒、蒜</view>
+    <!-- 菜系 -->
+    <view class="hometown">菜系：鲁菜、川菜、北京菜、贵州菜</view>
+    <!-- 菜的故事 -->
+    <view class="story">菜的故事：
+      <view> $%^%*^&*^(%%$%$#$&#$#^*)(&^@#$%^&*(</view>
+    </view>
+
+    <view class="add">
+      <image class="heart-icon" src="../../../images/icons/heart_big.png"></image>
+    </view>
+
+  </view>
+</view>

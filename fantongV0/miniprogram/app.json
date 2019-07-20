@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mealTicket/mealTicket",
+    "pages/myInfo/myInfo",
+    "pages/second/dishes/dishes",
+    "pages/second/funCuisine/funCuisine",
+    "pages/second/detail/detail",
+    "pages/second/personas/personas",
+
+    "pages/second/myBucket/myBucket"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "饭桶小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mealTicket/mealTicket",
+        "text": "饭票"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "会员"
+      }
+    ]
+  }
+}

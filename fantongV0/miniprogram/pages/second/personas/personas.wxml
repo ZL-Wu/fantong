@@ -1,0 +1,8 @@
+<!--pages/second/personas/personas.wxml-->
+
+
+<view>这是用户画像页面，建设中...</view>
+<view style="margin: 20px 0 20px 0">
+  <text>下一跳转页面：\n 用户签约界面，建设中...</text>
+</view>
+<button type="primary" bindtap="goHome">回到主界面</button>
